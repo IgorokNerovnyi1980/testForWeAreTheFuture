@@ -10,8 +10,9 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
-    margin-top:7rem;
+    margin-top:9rem;
     margin-left:9%;
+    margin-bottom:1rem;
     font-weight:600;
     font-size:${props => props.theme.titleFZ};
 `

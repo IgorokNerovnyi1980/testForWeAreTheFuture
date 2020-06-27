@@ -1,15 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Item from './Item'
-import shortid from 'shortid'
 import Media from 'react-media';
+import data from '../lib/testData'
 
 const Wrapper = styled.div`
     width: ${props => props.width};
     min-height:75vh;
     margin:0 auto;
-    border:1px solid ${props => props.theme.lightBG};
-    background-color:${props=>props.BG};
+    box-shadow:${props =>props.theme.HeaderSHDW};
     display:flex;
     flex-wrap:wrap;
     justify-content:space-around;
@@ -18,7 +17,10 @@ const Wrapper = styled.div`
 `
 const ContentList = () => {
 
-    const data = ['1','2','3', '4', '5', '6', '7', '8']
+    const editItem = () => { 
+        alert('edit Item')
+    }
+
     return (
         <Media queries={{
             mobile: "(max-width: 900px)",
@@ -26,7 +28,7 @@ const ContentList = () => {
             {({mobile}) => (
              <Wrapper width={mobile ? '95%' : '80%'}>
              {data && data.map(obj => (
-                  <Item key={shortid.generate()}/>
+                  <Item key={obj.id} hotDog={obj} editItem={editItem} />
              ))}
           </Wrapper>
             )}
