@@ -17,6 +17,12 @@ const reducer = (state = initialState, action) => {
           ...state,
           isEdit: action.id,
         }
+        case Type.DELETE:
+            return {
+              ...state,
+              data: state.data.filter(obj => obj.id !== action.id),
+              isEdit:null
+            }
     default:
       return state
   }

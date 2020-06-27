@@ -34,12 +34,13 @@ const ContentList = () => {
                 console.log('save changes')
                 break
             case 'delete':
-                console.log('delete action')
+                dispatch({type:'DELETE', id })
+                console.log('DELETE')
                 break
             default: return
         }
     }
-    
+
     useEffect(()=>{
         dispatch({type:'GET_DATA', payload: testData})
     },[])//eslint-disable-line
