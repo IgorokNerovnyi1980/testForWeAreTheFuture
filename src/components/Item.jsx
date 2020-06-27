@@ -5,6 +5,7 @@ import Button from './Button'
 
 const Wrapper = styled.div`
     width: ${props => props.width};
+    max-width:50rem;
     min-height:40rem;
     margin-top:1rem;
     display:flex;
@@ -20,15 +21,18 @@ const Image = styled.img`
     width:100%;
 `
 const Label = styled.h2`
+    margin-top:1rem;
     font-size:${props => props.theme.accentFZ};
     font-weight:600;
 `
 
 const Price = styled.p`
+    margin-top:1rem;
     font-size:${props => props.theme.mainFZ};
     color:${props => props.theme.lightBG};
 `
 const Description = styled(Price)`
+    margin-bottom:1rem;
     color:${props => props.theme.secondaryBG};
 `
 
