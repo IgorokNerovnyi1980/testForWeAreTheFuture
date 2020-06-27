@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {
+  useState
+} from 'react'
 import {
   createGlobalStyle, ThemeProvider,
 } from 'styled-components'
 
-
 import themes from './lib/themes'
+
+import HotDogPage from './pages/HotDogPage'
+import Modal from './components/Modal'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -65,14 +69,16 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const App = () => {
-  const currentTheme = 'base'
+  const [currentTheme]  = useState('base')
+  const [isModal]  = useState(false)
 
 
 
   return (
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyle />
-      <p>test</p>
+      <HotDogPage />
+      {isModal && <Modal />}
     </ThemeProvider>
   )
 }

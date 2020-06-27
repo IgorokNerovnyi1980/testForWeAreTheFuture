@@ -1,12 +1,11 @@
 import {
-  Bg, coldBg, Fs, Shdw, other,
+  BG, FZ, SHDW, other,
 } from './variables'
 
 const base = {
-  ...Bg,
-  ...coldBg,
-  ...Fs,
-  ...Shdw,
+  ...BG,
+  ...FZ,
+  ...SHDW,
   ...other,
 }
 
