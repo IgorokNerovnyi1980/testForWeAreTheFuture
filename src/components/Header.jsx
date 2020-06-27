@@ -7,8 +7,9 @@ const Wrapper = styled.header`
     width:100vw;
     height:4rem;
     padding:1rem 2rem;
-    border-top:1px solid ${props => props.theme.lightBG};
-    border-bottom:1px solid ${props => props.theme.lightBG};
+    box-shadow:${props =>props.theme.HeaderSHDW};
+    /* border-top:1px solid ${props => props.theme.lightBG};
+    border-bottom:1px solid ${props => props.theme.lightBG}; */
     background-color:${props => props.theme.mainBG};
     display:flex;
     justify-content:space-between;

@@ -13,6 +13,7 @@ export const FZ = {
 }
 export const SHDW = {
   BoxSHDW: '0px 5px 5px 0px rgba(163,186,217,0.25)',
+  HeaderSHDW:'0px 2px 5px 2px rgba(171,166,166,0.8)'
 }
 export const other = {
   mainPad: '1rem',
