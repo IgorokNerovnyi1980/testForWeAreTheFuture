@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/testForWeAreTheFuture/static/js/main.a586aac6.chunk.js",
+    "main.js.map": "/testForWeAreTheFuture/static/js/main.a586aac6.chunk.js.map",
+    "runtime-main.js": "/testForWeAreTheFuture/static/js/runtime-main.dcd02576.js",
+    "runtime-main.js.map": "/testForWeAreTheFuture/static/js/runtime-main.dcd02576.js.map",
+    "static/js/2.de9e84bc.chunk.js": "/testForWeAreTheFuture/static/js/2.de9e84bc.chunk.js",
+    "static/js/2.de9e84bc.chunk.js.map": "/testForWeAreTheFuture/static/js/2.de9e84bc.chunk.js.map",
+    "index.html": "/testForWeAreTheFuture/index.html",
+    "precache-manifest.c3f039a576e7dec5cc42fbd59064a957.js": "/testForWeAreTheFuture/precache-manifest.c3f039a576e7dec5cc42fbd59064a957.js",
+    "service-worker.js": "/testForWeAreTheFuture/service-worker.js",
+    "static/js/2.de9e84bc.chunk.js.LICENSE.txt": "/testForWeAreTheFuture/static/js/2.de9e84bc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dcd02576.js",
+    "static/js/2.de9e84bc.chunk.js",
+    "static/js/main.a586aac6.chunk.js"
+  ]
+}
