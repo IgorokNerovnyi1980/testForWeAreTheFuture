@@ -3,9 +3,12 @@ import {
 }
   from 'redux'
 
-import lang from './langReducer'
+import modal from './modalReducer'
+import hotDog from './hotDogReducer'
+
 
 
 export default combineReducers({
-  lang,
+  modal,
+  hotDog
 })

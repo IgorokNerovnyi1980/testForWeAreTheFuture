@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import {
+    useDispatch
+} from 'react-redux'
 import Button from './Button'
 
 const Wrapper = styled.header`
@@ -14,20 +17,28 @@ const Wrapper = styled.header`
     justify-content:space-between;
     align-items:center;
 `
+const Header = () => {
+    const dispatch = useDispatch()
 
-const Header = () => (
-    <Wrapper>
-         <Button 
-            width='10rem' 
-            logo
-            fnClick={() => alert('go to about brand')} 
-         />
-        <Button 
-            width='10rem' 
-            dark 
-            label='edit' 
-            fnClick={() => alert('create new')} 
-        />
-    </Wrapper>
-)
+    const createNew = () => {
+        dispatch({type:'OPEN_MODAL'})
+        console.log('OPEN_MODAL')
+    }
+
+    return (
+        <Wrapper>
+             <Button 
+                width='10rem' 
+                logo
+                fnClick={() => alert('go to about brand')} 
+             />
+            <Button 
+                width='10rem' 
+                dark 
+                label='add New' 
+                fnClick={createNew} 
+            />
+        </Wrapper>
+    )
+}
 export default Header

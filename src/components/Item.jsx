@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     justify-content:space-between;
     align-items:flex-start;
     :last-child{
-        margin-bottom:1rem;
+        margin-bottom:2rem;
     }
 `
 
@@ -35,27 +35,40 @@ const Description = styled(Price)`
     margin-bottom:1rem;
     color:${props => props.theme.secondaryBG};
 `
+const Item = ({element, isEdit, onButtonClick}) => {
+    return (
+        <Media queries={{
+            mobile: "(max-width: 900px)",
+          }}>
+            {({mobile}) => (
+            
+            <Wrapper 
+                width={mobile ? '90%' : '30%'}
+            >
+                
+            <Image src={element.img}/>
+            <Label>{element.label}</Label>
+            <Price>{`${element.price} $`}</Price>
+            <Description>{element.description}</Description>
+            {(isEdit === element.id) 
+                && <Button 
+                    dark 
+                    label='delete' 
+                    fnClick={() => onButtonClick(element.id, 'delete')} 
+                />
+            }
+            <Button 
+                label={(isEdit === element.id) ? 'save': 'edit'} 
+                fnClick={() => onButtonClick(element.id, (isEdit === element.id) ? 'save': 'startEdit' )} 
+            />
 
-const Item = ({hotDog, editItem}) =>(
-    <Media queries={{
-        mobile: "(max-width: 900px)",
-      }}>
-        {({mobile}) => (
-        
-        <Wrapper 
-            width={mobile ? '90%' : '30%'}
-        >
-
-        <Image src={hotDog.img}/>
-        <Label>{hotDog.label}</Label>
-        <Price>{`${hotDog.price} $`}</Price>
-        <Description>{hotDog.description}</Description>
-        <Button label='edit' fnClick={editItem} />
-        
-    </Wrapper>
-        )}
-      </Media>
-   
-)
+            
+            
+        </Wrapper>
+            )}
+          </Media>
+       
+    )
+}
 
 export default Item

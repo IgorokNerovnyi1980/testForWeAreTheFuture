@@ -2,6 +2,9 @@ import React, {
   useState
 } from 'react'
 import {
+  useSelector
+} from 'react-redux'
+import {
   createGlobalStyle, ThemeProvider,
 } from 'styled-components'
 
@@ -9,6 +12,7 @@ import themes from './lib/themes'
 
 import HotDogPage from './pages/HotDogPage'
 import Modal from './components/Modal'
+import CreateNew from './components/CreateNew'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -70,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App = () => {
   const [currentTheme]  = useState('base')
-  const [isModal]  = useState(false)
+  const isModal = useSelector(store => store.modal.isOpen)
 
 
 
@@ -78,7 +82,7 @@ const App = () => {
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyle />
       <HotDogPage />
-      {isModal && <Modal />}
+      {isModal && <Modal><CreateNew /></Modal>}
     </ThemeProvider>
   )
 }
