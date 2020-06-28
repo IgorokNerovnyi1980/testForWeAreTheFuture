@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Media from 'react-media';
 import Button from './Button'
+import dumpimg from '../img/dumpImg.png'
 
 const Wrapper = styled.div`
     width: ${props => props.width};
@@ -62,39 +63,39 @@ const Item = ({element, isEdit, onButtonClick, fnChange}) => {
                 width={mobile ? '90%' : '30%'}
             >
                 
-            <Image src={element.img}/>
+            <Image src={element.img || dumpimg}/>
            {(isEdit === element.id)
            ? <>
             <Input
                 type='text'
                 name='img'
-                value={element.img}
+                value={element.img|| ''}
                 onChange={e => fnChange(e, element.id)}
                 />
             <Input
                 type='text'
                 name='label'
-                value={element.label}
+                value={element.label || ''}
                 onChange={e => fnChange(e, element.id)}
                 />
             <Input
                 type='text'
                 name='price'
-                value={element.price}
+                value={element.price ||''}
                 onChange={e => fnChange(e, element.id)}
                 />
             <TextArea
                 type='text'
                 name='description'
-                value={element.description}
+                value={element.description || ''}
                 onChange={e => fnChange(e, element.id)}
                 />
            </>
            : 
             <>
-                    <Label>{element.label}</Label>
-                    <Price>{`${element.price} $`}</Price>
-                    <Description>{element.description}</Description>
+                    <Label>{element.label || 'unknown'}</Label>
+                    <Price>{`${element.price || '-'} $`}</Price>
+                    <Description>{element.description || 'unknown'}</Description>
                 </>
             }
             {(isEdit === element.id) 
@@ -108,8 +109,6 @@ const Item = ({element, isEdit, onButtonClick, fnChange}) => {
                 label={(isEdit === element.id) ? 'save': 'edit'} 
                 fnClick={() => onButtonClick(element.id, (isEdit === element.id) ? 'save': 'startEdit' )} 
             />
-
-            
             
         </Wrapper>
             )}

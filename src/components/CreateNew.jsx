@@ -1,9 +1,12 @@
-import React from 'react'
+import React,{
+    useState
+} from 'react'
 import styled from 'styled-components'
 import {
-    useDispatch
+    useDispatch, useSelector
 } from 'react-redux'
 import Button from './Button'
+import shortid from 'shortid'
 
 
 const Wrapper =  styled.form`
@@ -32,24 +35,54 @@ const Input = styled.input`
     padding:${props => props.theme.secondaryPad};
     border:1px solid ${props => props.theme.lightBG};
 `
-
 const CreateNew = () => {
-const dispatch = useDispatch()
-    const onCancel = () => {
-        dispatch({type:'CLOSE_MODAL'})
-       console.log('CLOSE_MODAL')
+    const [newObj, setNewObj] = useState({label:'', price:'', description:'', img:'', })
+    const dispatch = useDispatch()
+    const data = useSelector(store => store.hotDog.data)
+
+    const onChangeInput = e => {
+        setNewObj({...newObj, [e.target.name]:e.target.value})
     }
 
-    const onSave = () => {
-      alert('not Ready')  
+    const onCancel = () => {
+        dispatch({type:'CLOSE_MODAL'})
+       console.log('close modal')
+    }
+
+    const onSave = async() => {
+        const isHaveName = await data.find(({label}) => label === newObj.label)
+        const isHaveData = newObj.label.length < 3
+        if(isHaveName){
+            alert('this name is used, please change name')
+            setNewObj({...newObj, label:''})
+        }else if(isHaveData){
+            alert('name must be a longer that 3 symbols')
+            setNewObj({...newObj, label:''})
+        }else{
+            dispatch({type:'CREATE' ,newObj:{...newObj, id:shortid.generate()} })
+            console.log('create new')
+            onCancel()
+        }
+        
     }
      return(
          <Wrapper>
              <Title>add new Position</Title>
-             <Input/>
-             <Input/>
-             <Input/>
-             <Input/>
+             {Object.keys(newObj).map(str => {
+                 if(str === 'id'){
+                     return null
+                 }else{
+                     return(
+                        <Input 
+                            type='text'
+                            name={str}
+                            value={newObj[str]}
+                            onChange={e => onChangeInput(e)}
+                            placeholder={str}
+                        />
+                     )
+                 }
+             })}
              <BtnWrap>
              <Button
                 width='45%'

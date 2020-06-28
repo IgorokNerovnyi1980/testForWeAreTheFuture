@@ -34,6 +34,12 @@ const reducer = (state = initialState, action) => {
                     }
                 }),
             }
+            case Type.CREATE:
+            return {
+              ...state,
+              data: [action.newObj, ...state.data],
+            }
+            
     default:
       return state
   }
