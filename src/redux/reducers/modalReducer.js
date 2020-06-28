@@ -1,7 +1,7 @@
 import Type from '../types'
 
 const initialState = {
- isOpen: true,
+ isOpen: false,
  component:null
 }
 
