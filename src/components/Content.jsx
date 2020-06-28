@@ -17,7 +17,7 @@ const Title = styled.h1`
     font-size:${props => props.theme.titleFZ};
 `
 
-const Content = ({title='Title'}) =>(
+const Content = ({title='Hot-Dog Sales'}) =>(
     <Wrapper>
         <Title>{title}</Title>
         <ContentList />

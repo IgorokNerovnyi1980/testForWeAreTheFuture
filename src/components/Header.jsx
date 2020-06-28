@@ -6,7 +6,8 @@ import {
 import Button from './Button'
 
 const Wrapper = styled.header`
-    position: absolute;
+    z-index:5;
+    position: fixed;
     top:2rem;
     width:100vw;
     height:6rem;

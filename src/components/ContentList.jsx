@@ -51,9 +51,18 @@ const ContentList = () => {
         console.log('update state')
     }
 
-    useEffect(()=>{
-        dispatch({type:'GET_DATA', payload: testData})
-        console.log('GET_DATA (from api)')
+    useEffect(() => {
+
+        // this async wrapper for Api request
+        const asyncFunction = async () => {
+            try{
+                dispatch({type:'GET_DATA', payload: testData})
+                console.log('GET_DATA (from api)')
+            }catch(err){
+                console.log('failed request', err)
+            }
+        }
+        asyncFunction()
     },[])//eslint-disable-line
 
     return (
