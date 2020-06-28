@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/testForWeAreTheFuture/static/js/main.f96cd9a7.chunk.js",
-    "main.js.map": "/testForWeAreTheFuture/static/js/main.f96cd9a7.chunk.js.map",
+    "main.js": "/testForWeAreTheFuture/static/js/main.0e2c64ac.chunk.js",
+    "main.js.map": "/testForWeAreTheFuture/static/js/main.0e2c64ac.chunk.js.map",
     "runtime-main.js": "/testForWeAreTheFuture/static/js/runtime-main.dcd02576.js",
     "runtime-main.js.map": "/testForWeAreTheFuture/static/js/runtime-main.dcd02576.js.map",
-    "static/js/2.65560d29.chunk.js": "/testForWeAreTheFuture/static/js/2.65560d29.chunk.js",
-    "static/js/2.65560d29.chunk.js.map": "/testForWeAreTheFuture/static/js/2.65560d29.chunk.js.map",
+    "static/js/2.e348b92f.chunk.js": "/testForWeAreTheFuture/static/js/2.e348b92f.chunk.js",
+    "static/js/2.e348b92f.chunk.js.map": "/testForWeAreTheFuture/static/js/2.e348b92f.chunk.js.map",
     "index.html": "/testForWeAreTheFuture/index.html",
-    "precache-manifest.ffa1d12511e462d0a6e199fd2c91ce61.js": "/testForWeAreTheFuture/precache-manifest.ffa1d12511e462d0a6e199fd2c91ce61.js",
+    "precache-manifest.592092d8c3e7e2bcae66ab48c2ebb160.js": "/testForWeAreTheFuture/precache-manifest.592092d8c3e7e2bcae66ab48c2ebb160.js",
     "service-worker.js": "/testForWeAreTheFuture/service-worker.js",
-    "static/js/2.65560d29.chunk.js.LICENSE.txt": "/testForWeAreTheFuture/static/js/2.65560d29.chunk.js.LICENSE.txt",
+    "static/js/2.e348b92f.chunk.js.LICENSE.txt": "/testForWeAreTheFuture/static/js/2.e348b92f.chunk.js.LICENSE.txt",
     "static/media/hotdogLogo.png": "/testForWeAreTheFuture/static/media/hotdogLogo.92c993a0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.dcd02576.js",
-    "static/js/2.65560d29.chunk.js",
-    "static/js/main.f96cd9a7.chunk.js"
+    "static/js/2.e348b92f.chunk.js",
+    "static/js/main.0e2c64ac.chunk.js"
   ]
 }
