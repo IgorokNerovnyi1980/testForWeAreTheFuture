@@ -12,6 +12,7 @@ const Wrapper = styled.div`
     flex-direction:column;
     justify-content:space-between;
     align-items:flex-start;
+    color:${props => props.theme.secondaryBG};
     :last-child{
         margin-bottom:2rem;
     }
@@ -35,7 +36,22 @@ const Description = styled(Price)`
     margin-bottom:1rem;
     color:${props => props.theme.secondaryBG};
 `
-const Item = ({element, isEdit, onButtonClick}) => {
+const Input = styled.input`
+    width:100%;
+    padding:${props => props.theme.secondaryPad};
+    border:1px solid ${props =>props.theme.lightBG};
+    
+`
+const TextArea = styled.textarea`
+    width:100%;
+    height:12rem;
+    padding:${props => props.theme.secondaryPad};
+    resize: none;
+    border:1px solid ${props =>props.theme.lightBG};
+
+`
+
+const Item = ({element, isEdit, onButtonClick, fnChange}) => {
     return (
         <Media queries={{
             mobile: "(max-width: 900px)",
@@ -47,9 +63,40 @@ const Item = ({element, isEdit, onButtonClick}) => {
             >
                 
             <Image src={element.img}/>
-            <Label>{element.label}</Label>
-            <Price>{`${element.price} $`}</Price>
-            <Description>{element.description}</Description>
+           {(isEdit === element.id)
+           ? <>
+            <Input
+                type='text'
+                name='img'
+                value={element.img}
+                onChange={e => fnChange(e, element.id)}
+                />
+            <Input
+                type='text'
+                name='label'
+                value={element.label}
+                onChange={e => fnChange(e, element.id)}
+                />
+            <Input
+                type='text'
+                name='price'
+                value={element.price}
+                onChange={e => fnChange(e, element.id)}
+                />
+            <TextArea
+                type='text'
+                name='description'
+                value={element.description}
+                onChange={e => fnChange(e, element.id)}
+                />
+           </>
+           : 
+            <>
+                    <Label>{element.label}</Label>
+                    <Price>{`${element.price} $`}</Price>
+                    <Description>{element.description}</Description>
+                </>
+            }
             {(isEdit === element.id) 
                 && <Button 
                     dark 

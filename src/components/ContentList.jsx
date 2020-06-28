@@ -28,21 +28,32 @@ const ContentList = () => {
     const onButtonClick = (id, type) => { 
         switch(type){
             case 'startEdit':
-                dispatch({type:'START_EDIT', id })
+                dispatch({type:'EDIT_ID', id })
+                console.log('start edit')
                 break
             case 'save':
-                console.log('save changes')
+                dispatch({type:'EDIT_ID', id:null})
+                console.log('finish edit')
                 break
             case 'delete':
                 dispatch({type:'DELETE', id })
-                console.log('DELETE')
+                console.log('delete')
                 break
             default: return
         }
     }
 
+    const onChangeInput = (e, id) => {
+        const findEl = data.find(obj => id === obj.id)
+        const newObj = {...findEl,[e.target.name]:e.target.value }
+
+        dispatch({type:'EDIT', id, newObj})
+        console.log('update state')
+    }
+
     useEffect(()=>{
         dispatch({type:'GET_DATA', payload: testData})
+        console.log('GET_DATA (from api)')
     },[])//eslint-disable-line
 
     return (
@@ -57,6 +68,7 @@ const ContentList = () => {
                     element={obj} 
                     isEdit={isEdit} 
                     onButtonClick={onButtonClick}
+                    fnChange={onChangeInput}
                   />
              ))}
           </Wrapper>

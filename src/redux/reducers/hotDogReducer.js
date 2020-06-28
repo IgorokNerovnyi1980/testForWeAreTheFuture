@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         data: action.payload,
       }
-      case Type.START_EDIT:
+      case Type.EDIT_ID:
         return {
           ...state,
           isEdit: action.id,
@@ -22,6 +22,17 @@ const reducer = (state = initialState, action) => {
               ...state,
               data: state.data.filter(obj => obj.id !== action.id),
               isEdit:null
+            }
+        case Type.EDIT:
+            return {
+                ...state,
+                data: state.data.map(obj => {
+                    if(obj.id === action.id){
+                        return action.newObj
+                    }else{
+                        return obj
+                    }
+                }),
             }
     default:
       return state

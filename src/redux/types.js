@@ -4,7 +4,7 @@ const Type = {
     OPEN_MODAL:'OPEN_MODAL',
     CLOSE_MODAL:'CLOSE_MODAL',
     EDIT:'EDIT',
-    START_EDIT:'START_EDIT',
+    EDIT_ID:'EDIT_ID',
     CREATE:'CREATE',
     DELETE:'DELETE'
 }
