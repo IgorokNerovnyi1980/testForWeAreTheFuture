@@ -1,8 +1,8 @@
 import Type from '../types'
 
 const initialState = {
- isOpen: false,
- component:null
+  isOpen: false,
+  component: null,
 }
 
 const reducer = (state = initialState, action) => {
@@ -12,11 +12,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         isOpen: true,
       }
-      case Type.CLOSE_MODAL:
-        return {
-          ...state,
-          isOpen: false,
-        }
+    case Type.CLOSE_MODAL:
+      return {
+        ...state,
+        isOpen: false,
+      }
     default:
       return state
   }

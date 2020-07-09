@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import imgLogo from '../img/hotdogLogo.png'
 
-const Wrapper  = styled.button`
+const Wrapper = styled.button`
     width:${props => props.width};
     padding:${props => props.theme.mainPad};
-    background-color:${props => props.dark ? props.theme.secondaryBG :  props.theme.lightBG};
+    background-color:${props => (props.dark ? props.theme.secondaryBG : props.theme.lightBG)};
     color:${props => props.theme.mainBG};
     cursor: pointer;
     transition:0.2s ease;
@@ -23,27 +24,31 @@ const Image = styled.img`
 `
 
 const Button = ({
-    width='100%', dark = false, type='button', label = 'default', logo = false,
-    fnClick= ()=> { }
-    }) => (
-        logo
-        ? <WrapWithImg
-                width={width}
-                dark={dark}
-                type={type}
-                onClick={fnClick}
-            >
-            <Image src={imgLogo} />
-        </WrapWithImg>
-
-        : <Wrapper 
-                width={width}
-                dark={dark}
-                type={type}
-                onClick={fnClick}
-            >
-           {label}
-        </Wrapper>
+  width = '100%', dark = false, type = 'button', label = 'default', logo = false,
+  fnClick = () => { },
+}) => (
+  logo
+    ? (
+      <WrapWithImg
+        width={width}
+        dark={dark}
+        type={type}
+        onClick={fnClick}
+      >
+        <Image src={imgLogo} />
+      </WrapWithImg>
     )
+
+    : (
+      <Wrapper
+        width={width}
+        dark={dark}
+        type={type}
+        onClick={fnClick}
+      >
+        {label}
+      </Wrapper>
+    )
+)
 
 export default Button
