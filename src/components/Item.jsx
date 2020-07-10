@@ -71,7 +71,10 @@ const Item = ({
         width={mobile ? '90%' : '31.33%'}
         pad={mobile ? 'unset' : '1%'}
       >
-        <Image src={element.img || dumpimg} />
+        <Image
+          src={element.img || dumpimg}
+          alt={element.label || 'unknown'}
+        />
         {isEdit === element.id ? (
           <>
             <Input

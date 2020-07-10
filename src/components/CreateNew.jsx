@@ -10,30 +10,30 @@ import shortid from 'shortid'
 import Button from './Button'
 
 const Wrapper = styled.form`
-    width:30rem;
-    min-height:30rem;
-    padding:${props => props.theme.mainPad};
-    background-color:${props => props.theme.mainBG};
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:center;
+  width: 30rem;
+  min-height: 30rem;
+  padding: ${props => props.theme.mainPad};
+  background-color: ${props => props.theme.mainBG};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 `
 const Title = styled.h3`
-    font-size:${props => props.theme.accentFZ};
-    font-weight:600;
+  font-size: ${props => props.theme.accentFZ};
+  font-weight: 600;
 `
 
 const BtnWrap = styled.div`
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 const Input = styled.input`
-    max-width:90%;
-    padding:${props => props.theme.secondaryPad};
-    border:1px solid ${props => props.theme.lightBG};
+  max-width: 90%;
+  padding: ${props => props.theme.secondaryPad};
+  border: 1px solid ${props => props.theme.lightBG};
 `
 const CreateNew = () => {
   const [newObj, setNewObj] = useState({
@@ -56,7 +56,7 @@ const CreateNew = () => {
     dispatch({
       type: 'CLOSE_MODAL',
     })
-    console.log('close modal')
+    console.log("close modal"); //eslint-disable-line
   }
 
   const onSave = async () => {
@@ -65,13 +65,13 @@ const CreateNew = () => {
     }) => label === newObj.label)
     const isHaveData = newObj.label.length < 3
     if (isHaveName) {
-      alert('this name is used, please change name')
+      alert("this name is used, please change name"); //eslint-disable-line
       setNewObj({
         ...newObj,
         label: '',
       })
     } else if (isHaveData) {
-      alert('name must be a longer that 3 symbols')
+      alert("name must be a longer that 3 symbols"); //eslint-disable-line
       setNewObj({
         ...newObj,
         label: '',
@@ -84,7 +84,7 @@ const CreateNew = () => {
           id: shortid.generate(),
         },
       })
-      console.log('create new')
+      console.log("create new"); //eslint-disable-line
       onCancel()
     }
   }
@@ -97,6 +97,7 @@ const CreateNew = () => {
         }
         return (
           <Input
+            key={str}
             type="text"
             name={str}
             value={newObj[str]}

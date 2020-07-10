@@ -1,4 +1,3 @@
-
 const Type = {
   GET_DATA: 'GET_DATA',
   OPEN_MODAL: 'OPEN_MODAL',
@@ -7,5 +6,6 @@ const Type = {
   EDIT_ID: 'EDIT_ID',
   CREATE: 'CREATE',
   DELETE: 'DELETE',
+  STOP_UPDATE_DATA: 'STOP_UPDATE_DATA',
 }
 export default Type

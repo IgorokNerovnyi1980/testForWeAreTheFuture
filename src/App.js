@@ -74,12 +74,15 @@ const GlobalStyle = createGlobalStyle`
 const App = () => {
   const [currentTheme] = useState('base')
   const isModal = useSelector(store => store.modal.isOpen)
-
   return (
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyle />
       <HotDogPage />
-      {isModal && <Modal><CreateNew /></Modal>}
+      {isModal && (
+        <Modal>
+          <CreateNew />
+        </Modal>
+      )}
     </ThemeProvider>
   )
 }
